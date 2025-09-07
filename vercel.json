@@ -1,25 +1,11 @@
 {
+  "version": 3,
+  "buildCommand": "npm install && npx vite build",
+  "outputDirectory": "dist",
   "builds": [
     {
-      "src": "client/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "client/dist"
-      }
-    },
-    {
-      "src": "server/app.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "server/app.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "client/dist/index.html"
+      "src": "package.json",
+      "use": "@vercel/static-build"
     }
   ]
 }
